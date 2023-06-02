@@ -2,6 +2,7 @@ import React from 'react'
 import './Home.css'
 
 import zdjecie from './dron.png'
+import { Link } from 'react-router-dom'
 
 function Home() {
     return (
@@ -19,14 +20,13 @@ function Home() {
                     <h1 className='home_title'>PORTAL O DRONACH</h1>
                     <div className='home_subtitle'>Najlepszy portal o dronach w sieci www </div>
 
-                    <button className='home_button'>WCHODZĘ!</button>
+                    <Link to="services">
+                        <button className='home_button'>WCHODZĘ!</button>
+                    </Link>
+
+
                 </div>
             </div>
-
-
-
-
-
 
         </div>
     )
