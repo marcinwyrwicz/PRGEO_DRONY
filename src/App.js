@@ -1,10 +1,10 @@
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
-
 import Home from './home/Home'
 import Map from './map/Map'
 import Services from './services/Services';
+import Weather from './weather/Weather';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +22,12 @@ const router = createBrowserRouter([
     element: <Services />,
     errorElement: <h1>Nie działa</h1>
   },
+  {
+    path: "/services/weather",
+    element: <Weather />,
+    errorElement: <h1>Nie działa</h1>
+  },
+
 ])
 
 
