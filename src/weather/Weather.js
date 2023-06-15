@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 import './Weather.css'
-// https://danepubliczne.imgw.pl/api/data/synop/
+import WeatherCard from './WeatherCard'
 
 function Weather() {
     // react hook on state
@@ -30,28 +30,18 @@ function Weather() {
 
     return (
         <div>
-            <div>Dane pogodowe</div>
-            <div>
+            <div className='weather_header'>Dane pogodowe</div>
+
+            <div className='weather_block'>
                 {
                     danePogodowe.map(
-                        ({ stacja, temperatura, cisnienie }) => {
-                            return <div className='weather_card'>
-                                <div className='weather_title'>Dane ze stacji {stacja}</div>
-                                <div className='weather_params'>
-                                    Temperatura: {temperatura} &deg;C, <br />
-                                    Ciśnienie: {cisnienie} hPa
-                                </div>
-                            </div>
+                        ({ id_stacji, stacja, temperatura, cisnienie }) => {
+                            return <WeatherCard key={id_stacji} stacja={stacja} temperatura={temperatura} cisnienie={cisnienie} />
                         })
                 }
-
             </div>
         </div >
     )
 }
-// {/* {
-//                     danePogodowe.map(({ id_stacji, stacja }) => {
-//                         return <div key={id_stacji} >{stacja}</div>;
-//                     })
-//                 } */}
+
 export default Weather
