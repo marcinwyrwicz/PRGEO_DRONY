@@ -7,11 +7,11 @@ function Services() {
         <div>Services
             <div>
 
-                <Link to="/">
-                    <button className='home_button'>Mapa</button>
-                </Link>
                 <Link to="baza_bsp">
                     <button className='home_button'>Biblioteka Dronów!</button>
+                </Link> <br />
+                <Link to="map">
+                    <button className='home_button'>Mapa</button>
                 </Link> <br />
                 <Link to="weather">
                     <button className='home_button'>poka poka ! <br /> pogode </button>

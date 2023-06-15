@@ -2,7 +2,9 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 import './Weather.css'
-import WeatherCard from './WeatherCard'
+
+import WeatherHeader from './WeatherHeader'
+import WeahaterBlockOfCards from './WeahaterBlockOfCards'
 
 function Weather() {
     // react hook on state
@@ -30,16 +32,8 @@ function Weather() {
 
     return (
         <div>
-            <div className='weather_header'>Dane pogodowe</div>
-
-            <div className='weather_block'>
-                {
-                    danePogodowe.map(
-                        ({ id_stacji, stacja, temperatura, cisnienie }) => {
-                            return <WeatherCard key={id_stacji} stacja={stacja} temperatura={temperatura} cisnienie={cisnienie} />
-                        })
-                }
-            </div>
+            <WeatherHeader title='Lista stacji pogodowych' />
+            <WeahaterBlockOfCards danePogodowe={danePogodowe} />
         </div >
     )
 }
